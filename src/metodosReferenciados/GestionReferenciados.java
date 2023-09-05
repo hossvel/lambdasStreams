@@ -7,5 +7,9 @@ public class  GestionReferenciados {
 	
 	}
 	
+	public int compararPorNombre(Persona p1, Persona p2) {
+		return p1.getNombre().compareTo(p2.getNombre());
+	
+	}
 	
 }

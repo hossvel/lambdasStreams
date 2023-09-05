@@ -8,13 +8,13 @@ public class ReferenciadosMain {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		//GestionReferenciados g1 = new GestionReferenciados();
+	
 
 		List<Persona> lista = new ArrayList<>();
 		lista.add(new Persona("p1", 21, "hh"));
-		lista.add(new Persona("p2", 32, "hh"));
+		lista.add(new Persona("p4", 32, "hh"));
 		lista.add(new Persona("p3", 13, "hh"));
-		lista.add(new Persona("p4", 4, "hh"));
+		lista.add(new Persona("p2", 4, "hh"));
 
 		System.out.println("Inicial");
 		lista.forEach(p1 -> System.out.println(p1.getNombre() + "-"+ p1.getEdad()  ));
@@ -34,6 +34,19 @@ public class ReferenciadosMain {
 		lista.sort(GestionReferenciados::compararEdad);
 		lista.forEach(p1 -> System.out.println(p1.getNombre() + "-" + p1.getEdad()));
 
+		
+		System.out.println("*****Referencia Por metodo cualquiera mediante instancia****");
+		
+		GestionReferenciados g1 = new GestionReferenciados();
+		System.out.println("expresion lambda");
+		lista.sort((p1,p2) -> g1.compararPorNombre(p1, p2));
+		lista.forEach(p1 -> System.out.println(p1.getNombre() + "-" + p1.getEdad()));
+		
+		System.out.println("Referencia Por metodo cualquiera metodo de referencia");
+		lista.add(new Persona("p6", 6, "hh"));
+		lista.sort(g1::compararPorNombre);
+		lista.forEach(p1 -> System.out.println(p1));
+		
 	}
 
 }

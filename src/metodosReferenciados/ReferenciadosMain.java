@@ -47,6 +47,17 @@ public class ReferenciadosMain {
 		lista.sort(g1::compararPorNombre);
 		lista.forEach(p1 -> System.out.println(p1));
 		
+		System.out.println("*****Referencia Por metodo  contructor****");
+		List<String> listastring = List.of("1", "8", "5", "6", "9");
+		
+		System.out.println("expresion lambda");
+		List<Integer> listasint = g1.getResults(listastring, r-> Integer.valueOf(r));
+		listasint.forEach(x -> System.out.println(x));
+		
+		//System.out.println("Referencia Por metodo Constructor");
+		//List<Integer> listasintC = g1.getResults(listastring,Integer::new);
+		//listasintC.forEach(x -> System.out.println(x));
+		
 	}
 
 }

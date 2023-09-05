@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author Hossmell
+ *
+ */
+module lambdasStreams {
+}
